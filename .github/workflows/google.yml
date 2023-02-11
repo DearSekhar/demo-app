@@ -8,6 +8,7 @@ env:
   GKE_CLUSTER: hschan-javademoapp-cluster
   GKE_APP_NAME: hschan-javademoapp
   GKE_SERVICE: hschan-serviceforjavademoapp
+  GKE_INGRESS: hschan-ingressforjavademoapp
   GKE_SERVICE_ACCOUNT: hschan-javademoappsvcacc
   GKE_REGION: us-central1
   GKE_ZONE: us-central1-c
