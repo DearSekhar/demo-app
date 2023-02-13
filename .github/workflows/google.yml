@@ -12,11 +12,9 @@ env:
   GKE_SERVICE_ACCOUNT: hschan-javademoappsvcacc
   GKE_REGION: us-central1
   GKE_ZONE: us-central1-c
- # Just a placeholder for the first deployment
-  GITHUB_SHA: Test
-  
+  GITHUB_SHA: test
   echo: $GITHUB_SHA
-  
+
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -50,7 +48,7 @@ jobs:
         gcloud auth configure-docker $GKE_REGION-docker.pkg.dev --quiet
         docker push "$GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME:$GITHUB_SHA"     
         "$GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME:$GITHUB_SHA"
-
+  
   Deploy:
     runs-on: ubuntu-latest
     environment: prod
