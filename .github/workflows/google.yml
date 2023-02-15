@@ -58,13 +58,13 @@ jobs:
       working-directory: ./
       run: |-  
         docker build \
-         --tag $GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME:$GKE_TAG + $($env:StartTime) .
+         --tag $GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME:$GKE_TAG + ${{ steps.meta.outputs.tags }} .
         # .
         #--build-arg GITHUB_REF="$GITHUB_REF" \
         #--build-arg GITHUB_SHA="$GITHUB_SHA" \    
        
         gcloud auth configure-docker $GKE_REGION-docker.pkg.dev --quiet
-        docker push $GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME:$GKE_TAG + $($env:StartTime)
+        docker push $GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME:$GKE_TAG + ${{ steps.meta.outputs.tags }}
   
   Deploy:
     runs-on: ubuntu-latest
