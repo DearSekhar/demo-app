@@ -13,6 +13,8 @@ env:
   GKE_REGION: us-central1
   GKE_ZONE: us-central1-c
   GKE_TAG: test
+  TEST_TAG: user/app:test
+  LATEST_TAG: user/app:latest  
 
 jobs:
   Build:
@@ -58,13 +60,13 @@ jobs:
       working-directory: ./
       run: |-  
         docker build \
-         --tag $GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME:$GKE_TAG + ${{ steps.meta.outputs.tags }} .
+         --tag $GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME:$GKE_TAG + $TEST_TAG . #${{ steps.meta.outputs.tags }} .
         # .
         #--build-arg GITHUB_REF="$GITHUB_REF" \
         #--build-arg GITHUB_SHA="$GITHUB_SHA" \    
        
         gcloud auth configure-docker $GKE_REGION-docker.pkg.dev --quiet
-        docker push $GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME:$GKE_TAG + ${{ steps.meta.outputs.tags }}
+        docker push $GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME:$GKE_TAG + $TEST_TAG #${{ steps.meta.outputs.tags }}
   
   Deploy:
     runs-on: ubuntu-latest
