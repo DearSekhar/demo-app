@@ -21,7 +21,7 @@ String hostname = InetAddress.getLocalHost().getHostName();
 	  <img src="<%=request.getContextPath()+"/images/logo.png"%>"/>
 	</nav>
 	<div class="container col-md-8 col-md-offset-3" style="overflow: auto">
-		<h1>Machine Name:<%=hostname"%> </h1>
+		<h1>Machine Name:<%=hostname%> </h1>
 		<h1>Login</h1>
 		<p style="color:RED" id="err"><%=error%></p>
 		<form action="LoginServlet" method="post">
