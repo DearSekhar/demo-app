@@ -33,7 +33,7 @@ String hostname = InetAddress.getLocalHost().getHostName();
 		
 			
 			<div class="form-group">
-				<label for="emailId">Email ID(02/13 05:22):</label> <input type="email"
+				<label for="emailId">Email ID(02/15 05:09):</label> <input type="email"
 					class="form-control" id="emailId" maxlength="50" placeholder="Enter Email Id"
 					name="username" required>
 			</div>
