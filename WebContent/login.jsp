@@ -25,8 +25,8 @@ String hostname = InetAddress.getLocalHost().getHostName();
 	</nav>
 	<div class="container col-md-8 col-md-offset-3" style="overflow: auto">
 	
-		<h1>Machine Name:<%= hostname%> </h1>
-		<h1>Machine Name2:<%= hostnameTwo%> </h1>
+		<h1>Machine Name:<%= hostname %> </h1>
+		<h1>Machine Name2:<%= hostnameTwo %> </h1>
 		<h1>Login</h1>
 		<p style="color:RED" id="err"><%=error%></p>
 		<form action="LoginServlet" method="post">
