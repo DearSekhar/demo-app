@@ -28,24 +28,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
       
-      
-    - name: Docker meta
-      id: meta
-      uses: docker/metadata-action@v4
-      with:
-        # list of Docker images to use as base name for tags
-        images: |
-          $GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME
-        # ghcr.io/username/app
-        # generate Docker tags based on the following events/attributes
-        tags: |
-          type=schedule
-          type=ref,event=branch
-          type=ref,event=pr
-          type=semver,pattern={{version}}
-          type=semver,pattern={{major}}.{{minor}}
-          type=semver,pattern={{major}}
-          type=sha      
 
     # Configure Workload Identity Federation and generate an access token.
     - id: 'auth'
