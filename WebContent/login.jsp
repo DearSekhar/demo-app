@@ -14,6 +14,9 @@ String error=(String)request.getAttribute("error");
 error = (error==null) ? "": error;
 String hostname = InetAddress.getLocalHost().getHostName();
 %>
+<%
+  String hostnameTwo = request.getRemoteHost() ;
+%>		
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-primary">
@@ -21,7 +24,9 @@ String hostname = InetAddress.getLocalHost().getHostName();
 	  <img src="<%=request.getContextPath()+"/images/logo.png"%>"/>
 	</nav>
 	<div class="container col-md-8 col-md-offset-3" style="overflow: auto">
-		<h1>Machine Name:<%=hostname%> </h1>
+	
+		<h1>Machine Name:<%= hostname%> </h1>
+		<h1>Machine Name2:<%= hostnameTwo%> </h1>
 		<h1>Login</h1>
 		<p style="color:RED" id="err"><%=error%></p>
 		<form action="LoginServlet" method="post">
