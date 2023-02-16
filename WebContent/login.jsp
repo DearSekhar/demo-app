@@ -12,8 +12,9 @@
 <%
 String error=(String)request.getAttribute("error");
 error = (error==null) ? "": error;
-String hostname = InetAddress.getLocalHost().getHostName();
 %>
+<!-- String hostname = InetAddress.getLocalHost().getHostName();-->
+
 <%
   String hostnameTwo = request.getRemoteHost() ;
 %>		
@@ -25,7 +26,7 @@ String hostname = InetAddress.getLocalHost().getHostName();
 	</nav>
 	<div class="container col-md-8 col-md-offset-3" style="overflow: auto">
 	
-		<h1>Machine Name:<%= hostname %> </h1>
+		<!--<h1>Machine Name:<%-- hostname --%> </h1>-->
 		<h1>Machine Name2:<%= hostnameTwo %> </h1>
 		<h1>Login</h1>
 		<p style="color:RED" id="err"><%=error%></p>
@@ -33,7 +34,7 @@ String hostname = InetAddress.getLocalHost().getHostName();
 		
 			
 			<div class="form-group">
-				<label for="emailId">Email ID(02/15 05:09):</label> <input type="email"
+				<label for="emailId">Email ID(02/16 01:19):</label> <input type="email"
 					class="form-control" id="emailId" maxlength="50" placeholder="Enter Email Id"
 					name="username" required>
 			</div>
