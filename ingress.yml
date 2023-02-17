@@ -7,7 +7,7 @@ spec:
     service:
       name: $GKE_SERVICE
       port:
-        number: 8080
+        number: 80
   #rules:
   #- http:
      # paths:
