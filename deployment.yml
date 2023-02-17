@@ -14,7 +14,7 @@ spec:
         app: $GKE_APP_NAME
     spec:
       containers:
-      - name: $GKE_APP_NAME-container
+      - name: $GKE_APP_NAME
         image: $GKE_REGION-docker.pkg.dev/$GKE_PROJECT/$GKE_PROJECT/$GKE_APP_NAME:$GKE_TAG
         ports:
         - containerPort: 80
