@@ -12,6 +12,7 @@ spec:
     metadata:
       labels:
         app: $GKE_APP_NAME
+        purpose: $GKE_APP_NAME        
     spec:
       containers:
       - name: $GKE_APP_NAME
