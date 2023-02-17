@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: $GKE_SERVICE
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: $GKE_APP_NAME
   ports:
