@@ -11,10 +11,10 @@ spec:
   type: ClusterIP #LoadBalancer
   selector:
     app: $GKE_APP_NAME
-    #purpose: bsc-config-demo    
+    purpose: $GKE_APP_NAME
   ports:
   - port: 80
-#    protocol: TCP
+    protocol: TCP
     targetPort: 8080
 #  - port: 80
 #    targetPort: 8080
