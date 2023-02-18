@@ -1,13 +1,29 @@
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  name: $GKE_INGRESS
+#spec:
+#  defaultBackend:
+#    service:
+#      name: $GKE_SERVICE
+#      port:
+#        number: 80
+        
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: $GKE_INGRESS
+  name: my-ingress
 spec:
-  defaultBackend:
-    service:
-      name: $GKE_SERVICE
-      port:
-        number: 80
+  rules:
+  - http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: $GKE_SERVICE
+            port:
+              number: 80        
   #rules:
   #- http:
      # paths:
