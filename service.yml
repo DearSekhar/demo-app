@@ -6,7 +6,7 @@ metadata:
   #  purpose: bsc-config-demo
   annotations:
     cloud.google.com/neg: '{"ingress": true, "exposed_ports": {"5000":{}}}' # Creates an NEG after an Ingress is created
-  #  cloud.google.com/backend-config: '{"default": "my-backendconfig"}  
+    cloud.google.com/backend-config: '{"default": "my-backendconfig"}  
     cloud.google.com/backend-config: '{"ports": {"80":"my-backendconfig"}}'
   #  cloud.google.com/backend-config: '{"ports": {"8080":"my-backendconfig"}}'
   #  cloud.google.com/backend-config: '{"ports": {"8282":"my-backendconfig"}}'
