@@ -7,3 +7,8 @@ spec:
   timeoutSec: 40
   connectionDraining:
     drainingTimeoutSec: 60
+  healthCheck:
+    checkIntervalSec: 15
+    port: 5000
+    type: HTTP
+    requestPath: /ht/
