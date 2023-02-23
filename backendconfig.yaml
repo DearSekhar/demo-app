@@ -4,12 +4,12 @@ kind: BackendConfig
 metadata:
   name: my-backendconfig
 spec:
-  customRequestHeaders:
-      headers:
-      - "X-Forwarded-Proto:https"
-  #timeoutSec: 40
-  #connectionDraining:
-  #  drainingTimeoutSec: 60
+  #customRequestHeaders:
+      #headers:
+      #- "X-Forwarded-Proto:https"
+  timeoutSec: 40
+  connectionDraining:
+    drainingTimeoutSec: 60
   healthCheck:
     checkIntervalSec: 15
     port: 5000
