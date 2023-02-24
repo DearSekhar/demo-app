@@ -12,7 +12,7 @@ metadata:
   #  cloud.google.com/backend-config: '{"ports": {"8282":"my-backendconfig"}}'
   #  cloud.google.com/neg: '{"ingress": true}'  
 spec:
-  type: NodePort #LoadBalancer #ClusterIP 
+  type: LoadBalancer #NodePort #LoadBalancer #ClusterIP 
   selector:
     app: $GKE_APP_NAME
     #purpose: $GKE_APP_NAME
